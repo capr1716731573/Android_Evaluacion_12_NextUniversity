@@ -27,7 +27,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
     private CallbackManager facebookCallBackManager;
-    private LoginButton LoginButton;
+    private LoginButton botonLoginFacebook;
 
     private AdView banner_AdView;
     /**
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        LoginButton = (LoginButton) findViewById(R.id.btn_Login_Facebook);
+        botonLoginFacebook = (LoginButton) findViewById(R.id.btn_Login_Facebook);
         //Tratamiento del Resultado al quere registrar en la app con el usuario de facebook
-        LoginButton.registerCallback(facebookCallBackManager, new FacebookCallback<LoginResult>() {
+        botonLoginFacebook.registerCallback(facebookCallBackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Toast.makeText(MainActivity.this, "App Facebook - Inicio de Sesion con Exito!!!", Toast.LENGTH_SHORT).show();
